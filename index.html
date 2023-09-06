@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction</title>
+</head>
+<body>
+    <h1>Churn Prediction</h1>
+    
+    <form id="churn-form">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+
+        <label for="subscription_length">Subscription Length (months):</label>
+        <input type="number" id="subscription_length" name="subscription_length" required><br><br>
+
+        <label for="monthly_bill">Monthly Bill:</label>
+        <input type="number" id="monthly_bill" name="monthly_bill" step="0.01" required><br><br>
+
+        <label for="total_usage_gb">Total Usage (GB):</label>
+        <input type="number" id="total_usage_gb" name="total_usage_gb" step="0.01" required><br><br>
+
+        <input type="button" value="Predict" onclick="predictChurn()">
+    </form>
+
+    <br><br>
+
+    <h2>Prediction:</h2>
+    <p id="prediction"></p>
+
+    <script>
+        function predictChurn() {
+            // Get input values from the form
+            var age = parseFloat(document.getElementById("age").value);
+            var gender = document.getElementById("gender").value;
+            var subscriptionLength = parseFloat(document.getElementById("subscription_length").value);
+            var monthlyBill = parseFloat(document.getElementById("monthly_bill").value);
+            var totalUsageGB = parseFloat(document.getElementById("total_usage_gb").value);
+
+            // Perform any necessary preprocessing on the input data
+            // For example, convert gender to numerical values
+
+            // Make predictions using your trained model
+            // Replace the following line with your prediction logic
+            var prediction = "Churn: Predicted Value";
+
+            // Display the prediction result
+            document.getElementById("prediction").innerHTML = prediction;
+        }
+    </script>
+</body>
+</html>
